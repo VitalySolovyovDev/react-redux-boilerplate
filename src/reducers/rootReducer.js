@@ -1,19 +1,6 @@
-import { createStore, applyMiddleware, combineReducers } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
+import { combineReducers } from "redux";
+import todos from "./todoReducer";
 
-import logger from "../middlewares/logger";
-import todoReducer from "./todoReducer";
-
-const reducers = combineReducers({
-  todo: todoReducer
+export default combineReducers({
+  todos
 });
-
-const middleWares = [logger];
-const composeEnhancers = composeWithDevTools({});
-
-export default createStore(
-  reducers,
-  composeEnhancers(
-    applyMiddleware(...middleWares)
-  )
-);
