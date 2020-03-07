@@ -1,17 +1,26 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import PropTypes from "prop-types";
+
+const RouterWithSubRoutes = route => (
+  <Route path={route.path} render={props => (
+    <route.component {...props} routes={route.routes}/>
+  )} />
+);
 
 const Root = props => (
   <Provider store={props.store}>
-    <BrowserRouter history={props.history} routes={props.routes} />
+    <Router>
+      {props.routes.map(
+        route => <RouterWithSubRoutes key={route.path} {...route} />
+      )}
+    </Router>
   </Provider>
 );
 
 Root.propTypes = {
   store: PropTypes.object.isRequired,
-  history: PropTypes.object.isRequired,
   routes: PropTypes.array.isRequired
 };
 

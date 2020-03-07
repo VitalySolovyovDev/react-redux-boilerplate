@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Root from "src/containers/Root";
-import store from "reducers/rootReducer";
-
-//history, routes
+import Root from "./containers/Root";
+import store from "./store/store";
+import routes from "./routes/routes";
 
 ReactDOM.render(
-  <Root store={store} />,
+  <Root
+    store={store}
+    routes={routes}
+  />,
   document.getElementById("root")
 );

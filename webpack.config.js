@@ -12,16 +12,6 @@ module.exports = {
     entry: {
         "bundle": "./src/index.js"
     },
-    plugins: [
-        new CleanWebpackPlugin({
-            cleanAfterEveryBuildPatterns: ["dist"]
-        }),
-        new HtmlWebpackPlugin({
-            title: "App build development",
-            filename: `${__dirname}/dist/index.html`,
-            template: `${__dirname}/src/index.html`
-        }),
-    ],
     module: {
         rules: [
             {
@@ -58,5 +48,20 @@ module.exports = {
     output: {
         filename: "[name].js",
         path: `${__dirname}/dist/`
+    },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new CleanWebpackPlugin({
+            cleanAfterEveryBuildPatterns: ["dist"]
+        }),
+        new HtmlWebpackPlugin({
+            title: "App build development",
+            filename: `${__dirname}/dist/index.html`,
+            template: `${__dirname}/src/index.html`
+        }),
+    ],
+    devServer: {
+        contentBase: "./dist",
+        hot: true
     }
 };
