@@ -12,16 +12,20 @@ export default [
   },
   {
     path: "/1",
-    component: C1,
-    routes: [
-      {
-        path: "/1/0",
-        component: C10
-      },
-      {
-        path: "/1/1",
-        component: C11
-      }
-    ]
+    exact: true,
+    component: C1
+  },
+  {
+    path: "/1/0",
+    exact: true,
+    component: C10
+  },
+  {
+    path: "/1/1",
+    exact: true,
+    component: C11
+  },
+  {
+    component: () => <div>No Match Route</div>
   }
 ];

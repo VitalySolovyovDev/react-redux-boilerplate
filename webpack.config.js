@@ -48,7 +48,8 @@ module.exports = {
     },
     output: {
         filename: "[name].js",
-        path: `${__dirname}/dist/`
+        path: `${__dirname}/dist/`,
+        publicPath: "/"
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
