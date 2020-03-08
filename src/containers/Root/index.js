@@ -1,6 +1,6 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const RouterWithSubRoutes = route => (
@@ -12,9 +12,11 @@ const RouterWithSubRoutes = route => (
 const Root = props => (
   <Provider store={props.store}>
     <Router>
-      {props.routes.map(
-        route => <RouterWithSubRoutes key={route.path} {...route} />
-      )}
+      <Switch>
+        {props.routes.map(
+          route => <RouterWithSubRoutes key={route.path} {...route} />
+        )}
+      </Switch>
     </Router>
   </Provider>
 );

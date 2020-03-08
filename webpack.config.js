@@ -1,6 +1,7 @@
 const webpack = require("webpack");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ScriptExtHtmlWebpackPlugin = require("script-ext-html-webpack-plugin");
 
 module.exports = {
     mode: "development",
@@ -59,9 +60,13 @@ module.exports = {
             filename: `${__dirname}/dist/index.html`,
             template: `${__dirname}/src/index.html`
         }),
+        new ScriptExtHtmlWebpackPlugin({
+            defaultAttribute: 'defer'
+        })
     ],
     devServer: {
         contentBase: "./dist",
-        hot: true
+        hot: true,
+        historyApiFallback: true
     }
 };

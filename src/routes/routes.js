@@ -6,10 +6,6 @@ import C11 from "../components/C11";
 
 export default [
   {
-    path: "*",
-    component: () => <div>Default</div>
-  },
-  {
     path: "/",
     exact: true,
     component: C0
