@@ -1,5 +1,5 @@
 import React from "react";
-import C0 from "../components/C0";
+import C0 from "../containers/Home";
 import C1 from "../components/C1";
 import C10 from "../components/C10";
 import C11 from "../components/C11";

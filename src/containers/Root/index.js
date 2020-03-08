@@ -7,10 +7,9 @@ const Root = props => (
   <Provider store={props.store}>
     <Router>
       <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/1">Link 1</Link></li>
-        <li><Link to="/1/0">Link 2</Link></li>
-        <li><Link to="/1/1">Link 3</Link></li>
+        {props.routes.map(
+          route => route.path && (<li key={route.path}><Link to={route.path}>Link {route.path}</Link></li>)
+        )}
       </ul>
       <Switch>
         {props.routes.map(

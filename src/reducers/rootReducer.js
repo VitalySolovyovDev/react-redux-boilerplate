@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import todos from "./todoReducer";
+import countries from "./countriesReducer";
 
 export default combineReducers({
-  todos
+  countries
 });
