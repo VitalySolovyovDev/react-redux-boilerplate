@@ -1,10 +1,8 @@
 import React from "react";
-import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const Root = props => (
-  <Provider store={props.store}>
     <Router>
       <ul>
         {props.routes.map(
@@ -17,11 +15,9 @@ const Root = props => (
         )}
       </Switch>
     </Router>
-  </Provider>
 );
 
 Root.propTypes = {
-  store: PropTypes.object.isRequired,
   routes: PropTypes.array.isRequired
 };
 

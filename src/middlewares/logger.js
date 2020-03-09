@@ -1,4 +1,4 @@
 export default store => next => action => {
-  console.log("---", "dispatching:", action);
+  typeof action !== "function" && console.log("---", "dispatching:", action);
   next(action);
 };
