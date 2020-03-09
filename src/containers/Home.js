@@ -9,6 +9,7 @@ class Home extends React.Component {
     return (
       <>
         <h1>HOME Page</h1>
+        <h2>Click the button below to get countries list</h2>
         <button type="button" onClick={getCountries}>Getting countries</button>
         {countries.length > 0 && <CountriesList countries={countries}/>}
       </>

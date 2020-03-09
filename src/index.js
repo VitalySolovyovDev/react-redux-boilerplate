@@ -12,3 +12,16 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
+
+// TODO 1: use immutable store
+// TODO 2: use reselect
+// TODO 6: refactoring using hooks
+// TODO 3: use preloader for async actions
+// TODO 4: create simple Node server
+// TODO 5: create login page and auth logic
+// TODO 7: add ESLint
+// TODO 8: test coverage
+// TODO 9: use context - ?
+// TODO 10: microservice server side
+// TODO 11: Apollo
+// TODO 12: GraphQL
