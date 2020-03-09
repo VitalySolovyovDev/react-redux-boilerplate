@@ -1,19 +1,21 @@
 import React from "react";
-import C0 from "../containers/Home";
-import C1 from "../components/C1";
+import Home from "../containers/home/Home";
+import Countries from "../containers/countries/Countries";
 import C10 from "../components/C10";
 import C11 from "../components/C11";
 
 export default [
   {
+    name: "Home",
     path: "/",
     exact: true,
-    component: C0
+    component: Home
   },
   {
-    path: "/1",
+    name: "Countries",
+    path: "/countries",
     exact: true,
-    component: C1
+    component: Countries
   },
   {
     path: "/1/0",

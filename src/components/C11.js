@@ -1,3 +1,3 @@
 import React from "react";
 
-export default props => <div>C11</div>;
+export default props => <div>Component 11</div>;

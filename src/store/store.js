@@ -1,7 +1,7 @@
-import {applyMiddleware, createStore} from "redux";
+import { applyMiddleware, createStore } from "redux";
 import thunk  from "redux-thunk";
 import logger from "../middlewares/logger";
-import {composeWithDevTools} from "redux-devtools-extension";
+import { composeWithDevTools } from "redux-devtools-extension";
 import reducer from "../reducers/rootReducer"
 
 const middleWares = [logger, thunk];

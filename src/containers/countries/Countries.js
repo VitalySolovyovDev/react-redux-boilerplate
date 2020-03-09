@@ -1,14 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import CountriesList from "../components/CountriesList";
-import { GET_COUNTRIES_SUCCESS } from "../constants/actions";
+import CountriesList from "../../components/CountriesList";
+import { GET_COUNTRIES_SUCCESS } from "../../constants/actions";
 
-class Home extends React.Component {
+class Countries extends React.Component {
   render() {
     const { countries, getCountries } = this.props;
     return (
       <>
-        <h1>HOME Page</h1>
         <h2>Click the button below to get countries list</h2>
         <button type="button" onClick={getCountries}>Getting countries</button>
         {countries.length > 0 && <CountriesList countries={countries}/>}
@@ -19,7 +18,7 @@ class Home extends React.Component {
 
 const mapStateToProps = store => {
   return {
-    countries: store.countries
+    countries: store.countries.toJS()
   };
 };
 
@@ -41,4 +40,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Countries);

@@ -9,6 +9,8 @@ const CountriesList = ({ countries }) => (
   </ul>
 );
 
-CountriesList.propTypes = { countries: PropTypes.array.isRequired };
+CountriesList.propTypes = {
+  countries: PropTypes.array.isRequired
+};
 
 export default CountriesList;

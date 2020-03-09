@@ -13,7 +13,6 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
-// TODO 1: use immutable store
 // TODO 2: use reselect
 // TODO 6: refactoring using hooks
 // TODO 3: use preloader for async actions

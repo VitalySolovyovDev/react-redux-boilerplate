@@ -6,7 +6,7 @@ const Root = props => (
     <Router>
       <ul>
         {props.routes.map(
-          route => route.path && (<li key={route.path}><Link to={route.path}>Link {route.path}</Link></li>)
+          route => route.path && route.name && (<li key={route.path}><Link to={route.path}>{route.name}</Link></li>)
         )}
       </ul>
       <Switch>
