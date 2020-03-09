@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { createSelector } from "reselect";
 import CountriesList from "../../components/CountriesList";
 import { GET_COUNTRIES_SUCCESS } from "../../constants/actions";
 
@@ -16,9 +17,14 @@ class Countries extends React.Component {
   };
 }
 
+const countriesSelector = createSelector(
+  state => state.countries,
+  countries => countries
+);
+
 const mapStateToProps = store => {
   return {
-    countries: store.countries.toJS()
+    countries: countriesSelector(store).toJS()
   };
 };
 

@@ -11,7 +11,7 @@ module.exports = {
     },
     devtool: "source-map",
     entry: {
-        "bundle": "./src/index.js"
+        "bundle": "./src/index.jsx"
     },
     module: {
         rules: [
@@ -45,6 +45,9 @@ module.exports = {
                 use: ["style-loader", "css-loader"]
             }
         ]
+    },
+    resolve: {
+        extensions: [".js", ".jsx"]
     },
     output: {
         filename: "[name].js",
